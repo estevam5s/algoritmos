@@ -456,7 +456,7 @@
                         <div class="code-text"><span class="comment"># Criando uma lista ordenada</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">lista = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>]</div>
+                        <div class="code-text">lista = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>]  <span class="comment"># O(1) - inicialização direta</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Criação constante</span>
@@ -467,7 +467,7 @@
                         <div class="code-text"><span class="comment"># Acesso direto</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="keyword">print</span>(lista[<span class="number">2</span>])</div>
+                        <div class="code-text"><span class="keyword">print</span>(lista[<span class="number">2</span>])  <span class="comment"># O(1) - acesso direto por índice</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Acesso por índice</span>
@@ -478,7 +478,7 @@
                         <div class="code-text"><span class="comment"># Inserção no início</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">lista.insert(<span class="number">0</span>, <span class="number">5</span>)</div>
+                        <div class="code-text">lista.insert(<span class="number">0</span>, <span class="number">5</span>)  <span class="comment"># O(n) - desloca todos os elementos</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge on">O(n)</span>
                             <span class="complexity-explanation">Desloca todos elementos</span>
@@ -489,7 +489,7 @@
                         <div class="code-text"><span class="comment"># Inserção no final</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">lista.append(<span class="number">60</span>)</div>
+                        <div class="code-text">lista.append(<span class="number">60</span>)  <span class="comment"># O(1) - adiciona no final</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Inserção constante</span>
@@ -497,7 +497,7 @@
                     </div>
                     
                     <div class="code-line">
-                        <div class="code-text"><span class="keyword">print</span>(lista)</div>
+                        <div class="code-text"><span class="keyword">print</span>(lista)  <span class="comment"># O(1) - operação de saída</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Impressão</span>
@@ -508,9 +508,14 @@
                 <div style="background: rgba(255, 235, 59, 0.15); padding: 12px; border-radius: 6px; border-left: 3px solid #ffeb3b; margin-top: 10px;">
                     <h4 style="color: #ffeb3b; margin-bottom: 8px;">🎯 Complexidade Final: <span class="complexity-badge on">O(n)</span></h4>
                     <p style="font-size: 0.9em; margin: 0;">
-                        <strong>Por que O(n)?</strong> A operação mais custosa é <code>lista.insert(0, 5)</code> que precisa 
-                        deslocar todos os elementos existentes para a direita. Mesmo com algumas operações O(1), 
-                        a complexidade dominante é O(n).
+                        <strong>Análise linha por linha:</strong><br>
+                        • <code>lista = [10, 20, 30, 40, 50]</code> → O(1)<br>
+                        • <code>print(lista[2])</code> → O(1)<br>
+                        • <code>lista.insert(0, 5)</code> → O(n)<br>
+                        • <code>lista.append(60)</code> → O(1)<br>
+                        • <code>print(lista)</code> → O(1)<br><br>
+                        <strong>Termo dominante:</strong> O(1) + O(1) + O(n) + O(1) + O(1) = <strong>O(n)</strong><br>
+                        Desconsideramos os termos O(1) e mantemos apenas o de maior crescimento.
                     </p>
                 </div>
 
@@ -519,21 +524,21 @@
                         <div class="code-text"><span class="comment">// Criando um array</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="preprocessor">#include</span> &lt;<span class="string">stdio.h</span>&gt;</div>
+                        <div class="code-text"><span class="preprocessor">#include</span> &lt;<span class="string">stdio.h</span>&gt;  <span class="comment">// O(1) - diretiva preprocessor</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Preprocessor</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="type">int</span> lista[<span class="number">10</span>] = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>};</div>
+                        <div class="code-text"><span class="type">int</span> lista[<span class="number">10</span>] = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>};  <span class="comment">// O(1) - declaração e inicialização</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Declaração constante</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="type">int</span> tamanho = <span class="number">5</span>;</div>
+                        <div class="code-text"><span class="type">int</span> tamanho = <span class="number">5</span>;  <span class="comment">// O(1) - atribuição de variável</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Variável</span>
@@ -544,7 +549,7 @@
                         <div class="code-text"><span class="comment">// Acesso direto</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">printf(<span class="string">"%d\n"</span>, lista[<span class="number">2</span>]);</div>
+                        <div class="code-text">printf(<span class="string">"%d\n"</span>, lista[<span class="number">2</span>]);  <span class="comment">// O(1) - acesso direto + I/O</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Acesso direto</span>
@@ -555,21 +560,21 @@
                         <div class="code-text"><span class="comment">// Inserção no início (O(n))</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="keyword">for</span>(<span class="type">int</span> i = tamanho; i > <span class="number">0</span>; i--)</div>
+                        <div class="code-text"><span class="keyword">for</span>(<span class="type">int</span> i = tamanho; i > <span class="number">0</span>; i--)  <span class="comment">// O(n) - loop de deslocamento</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge on">O(n)</span>
                             <span class="complexity-explanation">Loop deslocamento</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;lista[i] = lista[i<span class="number">-1</span>];</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;lista[i] = lista[i<span class="number">-1</span>];  <span class="comment">// O(1) - atribuição por referência</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Operação atômica</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">lista[<span class="number">0</span>] = <span class="number">5</span>; tamanho++;</div>
+                        <div class="code-text">lista[<span class="number">0</span>] = <span class="number">5</span>; tamanho++;  <span class="comment">// O(1) - atribuição + incremento</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Atribuição</span>
@@ -580,9 +585,16 @@
                 <div style="background: rgba(0, 89, 156, 0.15); padding: 12px; border-radius: 6px; border-left: 3px solid #00599c; margin-top: 10px;">
                     <h4 style="color: #4fc3f7; margin-bottom: 8px;">🎯 Complexidade Final: <span class="complexity-badge on">O(n)</span></h4>
                     <p style="font-size: 0.9em; margin: 0;">
-                        <strong>Por que O(n)?</strong> O loop <code>for(int i = tamanho; i > 0; i--)</code> executa n vezes 
-                        para deslocar todos os elementos. Em C, precisamos gerenciar manualmente essa operação, 
-                        mas a complexidade permanece O(n).
+                        <strong>Análise linha por linha:</strong><br>
+                        • <code>#include &lt;stdio.h&gt;</code> → O(1)<br>
+                        • <code>int lista[10] = {...}</code> → O(1)<br>
+                        • <code>int tamanho = 5</code> → O(1)<br>
+                        • <code>printf(..., lista[2])</code> → O(1)<br>
+                        • <code>for(int i = tamanho; i > 0; i--)</code> → O(n)<br>
+                        • <code>lista[i] = lista[i-1]</code> → O(1) executado n vezes<br>
+                        • <code>lista[0] = 5; tamanho++</code> → O(1)<br><br>
+                        <strong>Termo dominante:</strong> O(1) + O(1) + O(1) + O(1) + O(n) + O(1) = <strong>O(n)</strong><br>
+                        O loop de deslocamento domina todas as operações constantes.
                     </p>
                 </div>
             </div>
@@ -598,7 +610,7 @@
             <div class="code-section">
                 <div class="code-container python">
                     <div class="code-line">
-                        <div class="code-text">lista = [<span class="number">50</span>, <span class="number">10</span>, <span class="number">40</span>, <span class="number">20</span>, <span class="number">30</span>]</div>
+                        <div class="code-text">lista = [<span class="number">50</span>, <span class="number">10</span>, <span class="number">40</span>, <span class="number">20</span>, <span class="number">30</span>]  <span class="comment"># O(1) - inicialização de lista</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Criação</span>
@@ -609,28 +621,28 @@
                         <div class="code-text"><span class="comment"># Busca linear</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="keyword">for</span> elemento <span class="keyword">in</span> lista:</div>
+                        <div class="code-text"><span class="keyword">for</span> elemento <span class="keyword">in</span> lista:  <span class="comment"># O(n) - percorre todos elementos</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge on">O(n)</span>
                             <span class="complexity-explanation">Percorre lista</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> elemento == <span class="number">40</span>:</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> elemento == <span class="number">40</span>:  <span class="comment"># O(1) - comparação simples</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Comparação</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Encontrado!"</span>)</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Encontrado!"</span>)  <span class="comment"># O(1) - saída</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Impressão</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span></div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>  <span class="comment"># O(1) - interrupção do loop</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Quebra</span>
@@ -641,7 +653,7 @@
                         <div class="code-text"><span class="comment"># Ordenação</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">lista.sort()</div>
+                        <div class="code-text">lista.sort()  <span class="comment"># O(n log n) - algoritmo Timsort</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge onlogn">O(n log n)</span>
                             <span class="complexity-explanation">Timsort</span>
@@ -649,7 +661,7 @@
                     </div>
                     
                     <div class="code-line">
-                        <div class="code-text"><span class="keyword">print</span>(<span class="string">"Menor:"</span>, lista[<span class="number">0</span>])</div>
+                        <div class="code-text"><span class="keyword">print</span>(<span class="string">"Menor:"</span>, lista[<span class="number">0</span>])  <span class="comment"># O(1) - acesso direto + saída</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Acesso direto</span>
@@ -660,9 +672,16 @@
                 <div style="background: rgba(255, 235, 59, 0.15); padding: 12px; border-radius: 6px; border-left: 3px solid #ffeb3b; margin-top: 10px;">
                     <h4 style="color: #ffeb3b; margin-bottom: 8px;">🎯 Complexidade Final: <span class="complexity-badge onlogn">O(n log n)</span></h4>
                     <p style="font-size: 0.9em; margin: 0;">
-                        <strong>Por que O(n log n)?</strong> Embora a busca linear seja O(n), a operação mais custosa é 
-                        <code>lista.sort()</code> que usa Timsort com complexidade O(n log n). A complexidade final é 
-                        determinada pela operação dominante.
+                        <strong>Análise linha por linha:</strong><br>
+                        • <code>lista = [50, 10, 40, 20, 30]</code> → O(1)<br>
+                        • <code>for elemento in lista:</code> → O(n)<br>
+                        • <code>if elemento == 40:</code> → O(1) × n iterações<br>
+                        • <code>print("Encontrado!")</code> → O(1)<br>
+                        • <code>break</code> → O(1)<br>
+                        • <code>lista.sort()</code> → O(n log n)<br>
+                        • <code>print("Menor:", lista[0])</code> → O(1)<br><br>
+                        <strong>Termo dominante:</strong> O(1) + O(n) + O(n log n) + O(1) = <strong>O(n log n)</strong><br>
+                        O algoritmo Timsort domina a busca linear O(n).
                     </p>
                 </div>
 
@@ -674,14 +693,14 @@
                         <div class="code-text"><span class="preprocessor">#include</span> &lt;<span class="string">stdlib.h</span>&gt;</div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="type">int</span> lista[] = {<span class="number">50</span>, <span class="number">10</span>, <span class="number">40</span>, <span class="number">20</span>, <span class="number">30</span>};</div>
+                        <div class="code-text"><span class="type">int</span> lista[] = {<span class="number">50</span>, <span class="number">10</span>, <span class="number">40</span>, <span class="number">20</span>, <span class="number">30</span>};  <span class="comment">// O(1) - declaração com inicialização</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Declaração</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="type">int</span> n = <span class="number">5</span>;</div>
+                        <div class="code-text"><span class="type">int</span> n = <span class="number">5</span>;  <span class="comment">// O(1) - variável de controle</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Tamanho</span>
@@ -692,28 +711,28 @@
                         <div class="code-text"><span class="comment">// Busca linear</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) {</div>
+                        <div class="code-text"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) {  <span class="comment">// O(n) - loop de busca linear</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge on">O(n)</span>
                             <span class="complexity-explanation">Loop de busca</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(lista[i] == <span class="number">40</span>) {</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(lista[i] == <span class="number">40</span>) {  <span class="comment">// O(1) - comparação e acesso</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Comparação</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Encontrado!\n"</span>);</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Encontrado!\n"</span>);  <span class="comment">// O(1) - operação I/O</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Impressão</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;  <span class="comment">// O(1) - interrompe busca</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Quebra</span>
@@ -730,7 +749,7 @@
                         <div class="code-text"><span class="comment">// Ordenação quicksort</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">qsort(lista, n, <span class="keyword">sizeof</span>(<span class="type">int</span>), compare);</div>
+                        <div class="code-text">qsort(lista, n, <span class="keyword">sizeof</span>(<span class="type">int</span>), compare);  <span class="comment">// O(n log n) - quicksort da biblioteca</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge onlogn">O(n log n)</span>
                             <span class="complexity-explanation">Quicksort</span>
@@ -741,9 +760,17 @@
                 <div style="background: rgba(0, 89, 156, 0.15); padding: 12px; border-radius: 6px; border-left: 3px solid #00599c; margin-top: 10px;">
                     <h4 style="color: #4fc3f7; margin-bottom: 8px;">🎯 Complexidade Final: <span class="complexity-badge onlogn">O(n log n)</span></h4>
                     <p style="font-size: 0.9em; margin: 0;">
-                        <strong>Por que O(n log n)?</strong> A função <code>qsort()</code> implementa quicksort com 
-                        complexidade O(n log n) no caso médio. Mesmo que a busca linear seja O(n), a ordenação 
-                        domina a complexidade total do algoritmo.
+                        <strong>Análise linha por linha:</strong><br>
+                        • <code>#include &lt;stdio.h&gt;</code> → O(1)<br>
+                        • <code>#include &lt;stdlib.h&gt;</code> → O(1)<br>
+                        • <code>int lista[] = {...}</code> → O(1)<br>
+                        • <code>int n = 5</code> → O(1)<br>
+                        • <code>for(int i = 0; i &lt; n; i++)</code> → O(n)<br>
+                        • <code>if(lista[i] == 40)</code> → O(1) × n iterações<br>
+                        • <code>printf(...); break;</code> → O(1)<br>
+                        • <code>qsort(...)</code> → O(n log n)<br><br>
+                        <strong>Termo dominante:</strong> O(1) + O(n) + O(n log n) = <strong>O(n log n)</strong><br>
+                        A função qsort() com quicksort domina a busca linear.
                     </p>
                 </div>
             </div>
@@ -762,42 +789,42 @@
                         <div class="code-text"><span class="comment"># Criando matriz 3x3</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">matriz = [</div>
+                        <div class="code-text">matriz = [  <span class="comment"># O(1) - início da definição</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Início criação</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],  <span class="comment"># O(1) - linha 0</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Linha 0</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],  <span class="comment"># O(1) - linha 1</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Linha 1</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;[<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;[<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]  <span class="comment"># O(1) - linha 2</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Linha 2</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">]</div>
+                        <div class="code-text">]  <span class="comment"># O(1) - fecha definição</span></div>
                     </div>
                     
                     <div class="code-line">
                         <div class="code-text"><span class="comment"># Acesso direto</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="keyword">print</span>(matriz[<span class="number">1</span>][<span class="number">2</span>])</div>
+                        <div class="code-text"><span class="keyword">print</span>(matriz[<span class="number">1</span>][<span class="number">2</span>])  <span class="comment"># O(1) - acesso direto [linha][coluna]</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Acesso constante</span>
@@ -808,21 +835,21 @@
                         <div class="code-text"><span class="comment"># Percorrer todos elementos</span></div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text"><span class="keyword">for</span> linha <span class="keyword">in</span> matriz:</div>
+                        <div class="code-text"><span class="keyword">for</span> linha <span class="keyword">in</span> matriz:  <span class="comment"># O(n) - percorre n linhas</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge on">O(n)</span>
                             <span class="complexity-explanation">Loop externo</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> elemento <span class="keyword">in</span> linha:</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> elemento <span class="keyword">in</span> linha:  <span class="comment"># O(n) - percorre n colunas</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge on">O(n)</span>
                             <span class="complexity-explanation">Loop interno</span>
                         </div>
                     </div>
                     <div class="code-line">
-                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(elemento)</div>
+                        <div class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(elemento)  <span class="comment"># O(1) - operação simples</span></div>
                         <div class="complexity-annotation">
                             <span class="complexity-badge o1">O(1)</span>
                             <span class="complexity-explanation">Operação interna</span>
@@ -833,9 +860,14 @@
                 <div style="background: rgba(255, 235, 59, 0.15); padding: 12px; border-radius: 6px; border-left: 3px solid #ffeb3b; margin-top: 10px;">
                     <h4 style="color: #ffeb3b; margin-bottom: 8px;">🎯 Complexidade Final: <span class="complexity-badge on2">O(n²)</span></h4>
                     <p style="font-size: 0.9em; margin: 0;">
-                        <strong>Por que O(n²)?</strong> Os loops aninhados <code>for linha in matriz</code> e 
-                        <code>for elemento in linha</code> percorrem todos os elementos da matriz 3×3. 
-                        Para uma matriz n×n, isso resulta em O(n²) operações.
+                        <strong>Análise linha por linha:</strong><br>
+                        • <code>matriz = [ ... ]</code> → O(1) (criação de estrutura fixa)<br>
+                        • <code>print(matriz[1][2])</code> → O(1) (acesso direto)<br>
+                        • <code>for linha in matriz:</code> → O(n) (percorre n linhas)<br>
+                        • <code>for elemento in linha:</code> → O(n) (percorre n colunas)<br>
+                        • <code>print(elemento)</code> → O(1) (executado n² vezes)<br><br>
+                        <strong>Termo dominante:</strong> O(1) + O(1) + O(n) × O(n) × O(1) = <strong>O(n²)</strong><br>
+                        Loops aninhados multiplicam complexidades: n linhas × n colunas = n².
                     </p>
                 </div>
 
@@ -2639,5 +2671,82 @@
             }
         });
     </script>
+    <!-- Seção Explicativa sobre Análise de Complexidade -->
+    <div style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(33, 150, 243, 0.1)); padding: 30px; margin: 40px 20px; border-radius: 12px; border: 2px solid rgba(76, 175, 80, 0.3); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <h2 style="color: #4caf50; text-align: center; margin-bottom: 25px; font-size: 2.2em;">
+            📊 COMO DETERMINAR A COMPLEXIDADE DOMINANTE
+        </h2>
+
+        <div style="background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+            <h3 style="color: #1976d2; margin-bottom: 15px;">🎯 REGRA FUNDAMENTAL</h3>
+            <p style="font-size: 1.1em; line-height: 1.6; margin: 0;">
+                <strong>Na análise Big O, consideramos apenas o TERMO DE MAIOR CRESCIMENTO e desconsideramos:</strong><br>
+                • Constantes multiplicativas (3n → n)<br>
+                • Termos de menor ordem (n² + n → n²)<br>
+                • Todas as operações O(1)<br>
+            </p>
+        </div>
+
+        <div style="background: rgba(255, 235, 59, 0.2); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+            <h3 style="color: #f57f17; margin-bottom: 15px;">⚡ REGRAS PRÁTICAS</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div>
+                    <strong>📈 Loops Sequenciais:</strong><br>
+                    <code>O(n) + O(n) = O(n)</code><br>
+                    <small>Somamos as complexidades</small>
+                </div>
+                <div>
+                    <strong>🔄 Loops Aninhados:</strong><br>
+                    <code>O(n) × O(n) = O(n²)</code><br>
+                    <small>Multiplicamos as complexidades</small>
+                </div>
+                <div>
+                    <strong>🌿 Recursão:</strong><br>
+                    <code>T(n) = aT(n/b) + f(n)</code><br>
+                    <small>Resolvemos a recorrência</small>
+                </div>
+                <div>
+                    <strong>🔀 Condicionais:</strong><br>
+                    <code>max(O(f), O(g))</code><br>
+                    <small>Consideramos o pior caso</small>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: rgba(233, 30, 99, 0.1); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+            <h3 style="color: #c2185b; margin-bottom: 15px;">🏆 ORDEM DE DOMINÂNCIA</h3>
+            <div style="font-size: 1.2em; text-align: center; color: #333; font-weight: bold;">
+                O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(n³) &lt; O(2^n) &lt; O(n!)
+            </div>
+            <p style="text-align: center; margin-top: 10px; font-style: italic; color: #666;">
+                Sempre mantenha apenas o termo mais à direita desta sequência
+            </p>
+        </div>
+
+        <div style="background: rgba(158, 158, 158, 0.1); padding: 20px; border-radius: 8px;">
+            <h3 style="color: #424242; margin-bottom: 15px;">💡 EXEMPLOS DE SIMPLIFICAÇÃO</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-family: 'Courier New', monospace;">
+                <div>
+                    <strong>Expressão Completa</strong> → <strong>Big O Final</strong><br>
+                    <code>5n² + 3n + 7</code> → <span style="color: #4caf50;"><strong>O(n²)</strong></span><br>
+                    <code>2n log n + 100n</code> → <span style="color: #4caf50;"><strong>O(n log n)</strong></span><br>
+                    <code>n³ + n² + n</code> → <span style="color: #4caf50;"><strong>O(n³)</strong></span><br>
+                </div>
+                <div>
+                    <code>2^n + n!</code> → <span style="color: #4caf50;"><strong>O(n!)</strong></span><br>
+                    <code>log n + 1000</code> → <span style="color: #4caf50;"><strong>O(log n)</strong></span><br>
+                    <code>n + n/2 + n/4</code> → <span style="color: #4caf50;"><strong>O(n)</strong></span><br>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(45deg, rgba(76, 175, 80, 0.1), rgba(33, 150, 243, 0.1)); padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center;">
+            <p style="color: #1976d2; font-weight: bold; margin: 0; font-size: 1.1em;">
+                🚀 <strong>DICA FINAL:</strong> Sempre teste sua análise com valores grandes de n!<br>
+                Para n = 1.000.000, qual operação vai demorar mais?
+            </p>
+        </div>
+    </div>
+
 </body>
 </html>
